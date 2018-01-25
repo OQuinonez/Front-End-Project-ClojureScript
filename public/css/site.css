@@ -9,6 +9,18 @@ body {
     line-height: 1.5em;
 }
 
+img {
+    width: 150px;
+    height: 90px;
+}
+.btn {
+    background-color: maroon;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: white;
+}
+
 h1,
 h2,
 h3 {
@@ -34,6 +46,12 @@ a {
     text-decoration: none;
     color: #09f;
 }
+
+/* .Items {
+    background-color: black;
+    padding: 12px;
+    margin: 8px;
+} */
 
 a:hover {
     text-decoration: underline;
