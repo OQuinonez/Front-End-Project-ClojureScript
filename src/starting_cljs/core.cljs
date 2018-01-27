@@ -4,9 +4,6 @@
 
 ;; -------------------------
 ;; Views
-(defn foo []
-  [:p "hello World"]
-  (let [bar "Hello, I work"]))
 
 ; BELOW, WE WILL HAVE AN EMPTY ARRAY, WHICH WILL WORK AS THE CART
 (def cart (array))
@@ -52,13 +49,15 @@
     (map-indexed
       (fn [item-index item]
         [:div.row
-          [:div.col-lg-6.col-md-6.col-sm-4.Items
+          [:div.col-lg-10.col-md-4.col-sm-4.Items
             [:img {:src (:img item)}]
-            [:p "Name: "(:name item)]
-            [:strong "Description: "][:p (:description item)]
-            [:p "Price: "(:price item)]
-            [:p "Quantity: "(:quantity item)]]
-            [buy-button item-index]])
+            [:p ""]
+            [:strong "Name: "](:name item)[:p ""]
+            [:strong "Description: "](:description item)[:p ""]
+            [:strong "Price: "](:price item)[:p ""]
+            [:strong "Quantity: "](:quantity item)[:p ""]
+            [buy-button item-index]]
+            ])
       items)])
 
     
@@ -97,10 +96,17 @@
 
 
 
-[:div {:class "container"}
-  [:div {:class "row"}
-    [:div {:class "col-lg-4 col-md-6 col-sm-4 Header"}]]
-    [:h1 (:message @store)]
+; [:div.container
+  [:div.row
+    [:div.Header
+    [:h1 (:message @store)]]
+    [:form
+      [:input {:placeholder "Full Name"}]
+      [:input {:placeholder "Price"}]
+      [:input {:placeholder "Quantity"}]
+      [:input {:placeholder "Image address"}]
+      [:input {:placeholder "Description"}]
+      [:input {:placeholder "Product Name"}]]
   ; FUNCTION CALL BELOW!!!!!!!
   [displaying (:items @store)]])
 
